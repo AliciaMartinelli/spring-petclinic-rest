@@ -11,17 +11,8 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Cache pecto
-        uses: actions/cache@v4
-        with:
-          path: ~/.cargo/bin/pecto
-          key: pecto-${{ runner.os }}
-
       - name: Install pecto
-        run: |
-          if ! command -v pecto &> /dev/null; then
-            cargo install --git https://github.com/AliciaMartinelli/pecto pecto
-          fi
+        run: cargo install --git https://github.com/AliciaMartinelli/pecto pecto
 
       - name: Verify behavior spec
         run: pecto verify specs.yaml
