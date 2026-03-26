@@ -1,330 +1,7 @@
 name: spring-petclinic-rest
-analyzed: 2026-03-26T07:55:58Z
+analyzed: 2026-03-26T08:21:42Z
 files_analyzed: 86
 capabilities:
-- name: visit-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataVisitRepository.java
-  operations:
-  - name: save
-    source_method: SpringDataVisitRepository#save
-  - name: findById
-    source_method: SpringDataVisitRepository#findById
-  - name: findAll
-    source_method: SpringDataVisitRepository#findAll
-  - name: deleteById
-    source_method: SpringDataVisitRepository#deleteById
-  - name: count
-    source_method: SpringDataVisitRepository#count
-  - name: existsById
-    source_method: SpringDataVisitRepository#existsById
-- name: user-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataUserRepository.java
-  operations:
-  - name: save
-    source_method: SpringDataUserRepository#save
-  - name: findById
-    source_method: SpringDataUserRepository#findById
-  - name: findAll
-    source_method: SpringDataUserRepository#findAll
-  - name: deleteById
-    source_method: SpringDataUserRepository#deleteById
-  - name: count
-    source_method: SpringDataUserRepository#count
-  - name: existsById
-    source_method: SpringDataUserRepository#existsById
-- name: spring-data-pet-impl-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataPetRepositoryImpl.java
-  operations:
-  - name: delete
-    source_method: SpringDataPetRepositoryImpl#delete
-- name: owner-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataOwnerRepository.java
-  operations:
-  - name: save
-    source_method: SpringDataOwnerRepository#save
-  - name: findById
-    source_method: SpringDataOwnerRepository#findById
-  - name: findAll
-    source_method: SpringDataOwnerRepository#findAll
-  - name: deleteById
-    source_method: SpringDataOwnerRepository#deleteById
-  - name: count
-    source_method: SpringDataOwnerRepository#count
-  - name: existsById
-    source_method: SpringDataOwnerRepository#existsById
-  - name: SELECT DISTINCT owner FROM Owner owner left join fetch owner.pets WHERE owner.lastName LIKE :lastName%
-    source_method: SpringDataOwnerRepository#findByLastName
-  - name: SELECT owner FROM Owner owner left join fetch owner.pets WHERE owner.id =:id
-    source_method: SpringDataOwnerRepository#findById
-- name: spring-data-visit-impl-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataVisitRepositoryImpl.java
-  operations:
-  - name: delete
-    source_method: SpringDataVisitRepositoryImpl#delete
-- name: spring-data-specialty-impl-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataSpecialtyRepositoryImpl.java
-  operations:
-  - name: delete
-    source_method: SpringDataSpecialtyRepositoryImpl#delete
-- name: spring-data-pet-type-impl-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataPetTypeRepositoryImpl.java
-  operations:
-  - name: delete
-    source_method: SpringDataPetTypeRepositoryImpl#delete
-- name: vet-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataVetRepository.java
-  operations:
-  - name: save
-    source_method: SpringDataVetRepository#save
-  - name: findById
-    source_method: SpringDataVetRepository#findById
-  - name: findAll
-    source_method: SpringDataVetRepository#findAll
-  - name: deleteById
-    source_method: SpringDataVetRepository#deleteById
-  - name: count
-    source_method: SpringDataVetRepository#count
-  - name: existsById
-    source_method: SpringDataVetRepository#existsById
-- name: pet-type-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataPetTypeRepository.java
-  operations:
-  - name: save
-    source_method: SpringDataPetTypeRepository#save
-  - name: findById
-    source_method: SpringDataPetTypeRepository#findById
-  - name: findAll
-    source_method: SpringDataPetTypeRepository#findAll
-  - name: deleteById
-    source_method: SpringDataPetTypeRepository#deleteById
-  - name: count
-    source_method: SpringDataPetTypeRepository#count
-  - name: existsById
-    source_method: SpringDataPetTypeRepository#existsById
-- name: specialty-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataSpecialtyRepository.java
-  operations:
-  - name: save
-    source_method: SpringDataSpecialtyRepository#save
-  - name: findById
-    source_method: SpringDataSpecialtyRepository#findById
-  - name: findAll
-    source_method: SpringDataSpecialtyRepository#findAll
-  - name: deleteById
-    source_method: SpringDataSpecialtyRepository#deleteById
-  - name: count
-    source_method: SpringDataSpecialtyRepository#count
-  - name: existsById
-    source_method: SpringDataSpecialtyRepository#existsById
-- name: pet-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataPetRepository.java
-  operations:
-  - name: save
-    source_method: SpringDataPetRepository#save
-  - name: findById
-    source_method: SpringDataPetRepository#findById
-  - name: findAll
-    source_method: SpringDataPetRepository#findAll
-  - name: deleteById
-    source_method: SpringDataPetRepository#deleteById
-  - name: count
-    source_method: SpringDataPetRepository#count
-  - name: existsById
-    source_method: SpringDataPetRepository#existsById
-  - name: SELECT ptype FROM PetType ptype ORDER BY ptype.name
-    source_method: SpringDataPetRepository#findPetTypes
-- name: jpa-user-impl-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaUserRepositoryImpl.java
-  operations:
-  - name: save
-    source_method: JpaUserRepositoryImpl#save
-- name: jpa-visit-impl-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaVisitRepositoryImpl.java
-  operations:
-  - name: save
-    source_method: JpaVisitRepositoryImpl#save
-  - name: findByPetId
-    source_method: JpaVisitRepositoryImpl#findByPetId
-  - name: findById
-    source_method: JpaVisitRepositoryImpl#findById
-  - name: findAll
-    source_method: JpaVisitRepositoryImpl#findAll
-  - name: delete
-    source_method: JpaVisitRepositoryImpl#delete
-- name: jpa-vet-impl-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaVetRepositoryImpl.java
-  operations:
-  - name: findById
-    source_method: JpaVetRepositoryImpl#findById
-  - name: findAll
-    source_method: JpaVetRepositoryImpl#findAll
-  - name: save
-    source_method: JpaVetRepositoryImpl#save
-  - name: delete
-    source_method: JpaVetRepositoryImpl#delete
-- name: jpa-owner-impl-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaOwnerRepositoryImpl.java
-  operations:
-  - name: findByLastName
-    source_method: JpaOwnerRepositoryImpl#findByLastName
-  - name: findById
-    source_method: JpaOwnerRepositoryImpl#findById
-  - name: save
-    source_method: JpaOwnerRepositoryImpl#save
-  - name: findAll
-    source_method: JpaOwnerRepositoryImpl#findAll
-  - name: delete
-    source_method: JpaOwnerRepositoryImpl#delete
-- name: jpa-pet-impl-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaPetRepositoryImpl.java
-  operations:
-  - name: findPetTypes
-    source_method: JpaPetRepositoryImpl#findPetTypes
-  - name: findById
-    source_method: JpaPetRepositoryImpl#findById
-  - name: save
-    source_method: JpaPetRepositoryImpl#save
-  - name: findAll
-    source_method: JpaPetRepositoryImpl#findAll
-  - name: delete
-    source_method: JpaPetRepositoryImpl#delete
-- name: jpa-pet-type-impl-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaPetTypeRepositoryImpl.java
-  operations:
-  - name: findById
-    source_method: JpaPetTypeRepositoryImpl#findById
-  - name: findByName
-    source_method: JpaPetTypeRepositoryImpl#findByName
-  - name: findAll
-    source_method: JpaPetTypeRepositoryImpl#findAll
-  - name: save
-    source_method: JpaPetTypeRepositoryImpl#save
-  - name: delete
-    source_method: JpaPetTypeRepositoryImpl#delete
-- name: jpa-specialty-impl-repository
-  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaSpecialtyRepositoryImpl.java
-  operations:
-  - name: findById
-    source_method: JpaSpecialtyRepositoryImpl#findById
-  - name: findSpecialtiesByNameIn
-    source_method: JpaSpecialtyRepositoryImpl#findSpecialtiesByNameIn
-  - name: findAll
-    source_method: JpaSpecialtyRepositoryImpl#findAll
-  - name: save
-    source_method: JpaSpecialtyRepositoryImpl#save
-  - name: delete
-    source_method: JpaSpecialtyRepositoryImpl#delete
-- name: vet-entity
-  source: src/main/java/org/springframework/samples/petclinic/model/Vet.java
-  entities:
-  - name: Vet
-    table: vets
-    fields:
-    - name: specialties
-      type: Set<Specialty>
-      constraints:
-      - '@ManyToMany'
-- name: pet-entity
-  source: src/main/java/org/springframework/samples/petclinic/model/Pet.java
-  entities:
-  - name: Pet
-    table: pets
-    fields:
-    - name: birthDate
-      type: LocalDate
-    - name: type
-      type: PetType
-      constraints:
-      - '@ManyToOne'
-    - name: owner
-      type: Owner
-      constraints:
-      - '@ManyToOne'
-    - name: visits
-      type: Set<Visit>
-      constraints:
-      - '@OneToMany'
-- name: user-entity
-  source: src/main/java/org/springframework/samples/petclinic/model/User.java
-  entities:
-  - name: User
-    table: users
-    fields:
-    - name: username
-      type: String
-      constraints:
-      - '@Id'
-    - name: password
-      type: String
-    - name: enabled
-      type: Boolean
-    - name: roles
-      type: Set<Role>
-      constraints:
-      - '@OneToMany'
-- name: specialty-entity
-  source: src/main/java/org/springframework/samples/petclinic/model/Specialty.java
-  entities:
-  - name: Specialty
-    table: specialties
-    fields: []
-- name: owner-entity
-  source: src/main/java/org/springframework/samples/petclinic/model/Owner.java
-  entities:
-  - name: Owner
-    table: owners
-    fields:
-    - name: address
-      type: String
-      constraints:
-      - '@NotEmpty'
-    - name: city
-      type: String
-      constraints:
-      - '@NotEmpty'
-    - name: telephone
-      type: String
-      constraints:
-      - '@NotEmpty'
-      - '@Pattern(regexp=^[0-9]{10}$)'
-    - name: pets
-      type: Set<Pet>
-      constraints:
-      - '@OneToMany'
-- name: role-entity
-  source: src/main/java/org/springframework/samples/petclinic/model/Role.java
-  entities:
-  - name: Role
-    table: roles
-    fields:
-    - name: user
-      type: User
-      constraints:
-      - '@ManyToOne'
-    - name: name
-      type: String
-- name: visit-entity
-  source: src/main/java/org/springframework/samples/petclinic/model/Visit.java
-  entities:
-  - name: Visit
-    table: visits
-    fields:
-    - name: date
-      type: LocalDate
-    - name: description
-      type: String
-      constraints:
-      - '@NotEmpty'
-    - name: pet
-      type: Pet
-      constraints:
-      - '@ManyToOne'
-- name: pet-type-entity
-  source: src/main/java/org/springframework/samples/petclinic/model/PetType.java
-  entities:
-  - name: PetType
-    table: types
-    fields: []
 - name: clinic-service
   source: src/main/java/org/springframework/samples/petclinic/service/ClinicServiceImpl.java
   operations:
@@ -643,6 +320,286 @@ capabilities:
         body:
           name: Specialty
     transaction: read-only
+- name: jpa-owner-impl-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaOwnerRepositoryImpl.java
+  operations:
+  - name: findByLastName
+    source_method: JpaOwnerRepositoryImpl#findByLastName
+  - name: findById
+    source_method: JpaOwnerRepositoryImpl#findById
+  - name: save
+    source_method: JpaOwnerRepositoryImpl#save
+  - name: findAll
+    source_method: JpaOwnerRepositoryImpl#findAll
+  - name: delete
+    source_method: JpaOwnerRepositoryImpl#delete
+- name: jpa-pet-impl-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaPetRepositoryImpl.java
+  operations:
+  - name: findPetTypes
+    source_method: JpaPetRepositoryImpl#findPetTypes
+  - name: findById
+    source_method: JpaPetRepositoryImpl#findById
+  - name: save
+    source_method: JpaPetRepositoryImpl#save
+  - name: findAll
+    source_method: JpaPetRepositoryImpl#findAll
+  - name: delete
+    source_method: JpaPetRepositoryImpl#delete
+- name: jpa-pet-type-impl-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaPetTypeRepositoryImpl.java
+  operations:
+  - name: findById
+    source_method: JpaPetTypeRepositoryImpl#findById
+  - name: findByName
+    source_method: JpaPetTypeRepositoryImpl#findByName
+  - name: findAll
+    source_method: JpaPetTypeRepositoryImpl#findAll
+  - name: save
+    source_method: JpaPetTypeRepositoryImpl#save
+  - name: delete
+    source_method: JpaPetTypeRepositoryImpl#delete
+- name: jpa-specialty-impl-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaSpecialtyRepositoryImpl.java
+  operations:
+  - name: findById
+    source_method: JpaSpecialtyRepositoryImpl#findById
+  - name: findSpecialtiesByNameIn
+    source_method: JpaSpecialtyRepositoryImpl#findSpecialtiesByNameIn
+  - name: findAll
+    source_method: JpaSpecialtyRepositoryImpl#findAll
+  - name: save
+    source_method: JpaSpecialtyRepositoryImpl#save
+  - name: delete
+    source_method: JpaSpecialtyRepositoryImpl#delete
+- name: jpa-user-impl-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaUserRepositoryImpl.java
+  operations:
+  - name: save
+    source_method: JpaUserRepositoryImpl#save
+- name: jpa-vet-impl-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaVetRepositoryImpl.java
+  operations:
+  - name: findById
+    source_method: JpaVetRepositoryImpl#findById
+  - name: findAll
+    source_method: JpaVetRepositoryImpl#findAll
+  - name: save
+    source_method: JpaVetRepositoryImpl#save
+  - name: delete
+    source_method: JpaVetRepositoryImpl#delete
+- name: jpa-visit-impl-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaVisitRepositoryImpl.java
+  operations:
+  - name: save
+    source_method: JpaVisitRepositoryImpl#save
+  - name: findByPetId
+    source_method: JpaVisitRepositoryImpl#findByPetId
+  - name: findById
+    source_method: JpaVisitRepositoryImpl#findById
+  - name: findAll
+    source_method: JpaVisitRepositoryImpl#findAll
+  - name: delete
+    source_method: JpaVisitRepositoryImpl#delete
+- name: owner-entity
+  source: src/main/java/org/springframework/samples/petclinic/model/Owner.java
+  entities:
+  - name: Owner
+    table: owners
+    fields:
+    - name: address
+      type: String
+      constraints:
+      - '@NotEmpty'
+    - name: city
+      type: String
+      constraints:
+      - '@NotEmpty'
+    - name: telephone
+      type: String
+      constraints:
+      - '@NotEmpty'
+      - '@Pattern(regexp=^[0-9]{10}$)'
+    - name: pets
+      type: Set<Pet>
+      constraints:
+      - '@OneToMany'
+- name: owner-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataOwnerRepository.java
+  operations:
+  - name: save
+    source_method: SpringDataOwnerRepository#save
+  - name: findById
+    source_method: SpringDataOwnerRepository#findById
+  - name: findAll
+    source_method: SpringDataOwnerRepository#findAll
+  - name: deleteById
+    source_method: SpringDataOwnerRepository#deleteById
+  - name: count
+    source_method: SpringDataOwnerRepository#count
+  - name: existsById
+    source_method: SpringDataOwnerRepository#existsById
+  - name: SELECT DISTINCT owner FROM Owner owner left join fetch owner.pets WHERE owner.lastName LIKE :lastName%
+    source_method: SpringDataOwnerRepository#findByLastName
+  - name: SELECT owner FROM Owner owner left join fetch owner.pets WHERE owner.id =:id
+    source_method: SpringDataOwnerRepository#findById
+- name: pet-entity
+  source: src/main/java/org/springframework/samples/petclinic/model/Pet.java
+  entities:
+  - name: Pet
+    table: pets
+    fields:
+    - name: birthDate
+      type: LocalDate
+    - name: type
+      type: PetType
+      constraints:
+      - '@ManyToOne'
+    - name: owner
+      type: Owner
+      constraints:
+      - '@ManyToOne'
+    - name: visits
+      type: Set<Visit>
+      constraints:
+      - '@OneToMany'
+- name: pet-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataPetRepository.java
+  operations:
+  - name: save
+    source_method: SpringDataPetRepository#save
+  - name: findById
+    source_method: SpringDataPetRepository#findById
+  - name: findAll
+    source_method: SpringDataPetRepository#findAll
+  - name: deleteById
+    source_method: SpringDataPetRepository#deleteById
+  - name: count
+    source_method: SpringDataPetRepository#count
+  - name: existsById
+    source_method: SpringDataPetRepository#existsById
+  - name: SELECT ptype FROM PetType ptype ORDER BY ptype.name
+    source_method: SpringDataPetRepository#findPetTypes
+- name: pet-type-entity
+  source: src/main/java/org/springframework/samples/petclinic/model/PetType.java
+  entities:
+  - name: PetType
+    table: types
+    fields: []
+- name: pet-type-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataPetTypeRepository.java
+  operations:
+  - name: save
+    source_method: SpringDataPetTypeRepository#save
+  - name: findById
+    source_method: SpringDataPetTypeRepository#findById
+  - name: findAll
+    source_method: SpringDataPetTypeRepository#findAll
+  - name: deleteById
+    source_method: SpringDataPetTypeRepository#deleteById
+  - name: count
+    source_method: SpringDataPetTypeRepository#count
+  - name: existsById
+    source_method: SpringDataPetTypeRepository#existsById
+- name: role-entity
+  source: src/main/java/org/springframework/samples/petclinic/model/Role.java
+  entities:
+  - name: Role
+    table: roles
+    fields:
+    - name: user
+      type: User
+      constraints:
+      - '@ManyToOne'
+    - name: name
+      type: String
+- name: root-rest
+  source: src/main/java/org/springframework/samples/petclinic/rest/controller/RootRestController.java
+  endpoints:
+  - method: GET
+    path: /
+    behaviors:
+    - name: success
+      returns:
+        status: 200
+        body:
+          name: void
+    security:
+      cors: 'origins: *'
+- name: specialty-entity
+  source: src/main/java/org/springframework/samples/petclinic/model/Specialty.java
+  entities:
+  - name: Specialty
+    table: specialties
+    fields: []
+- name: specialty-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataSpecialtyRepository.java
+  operations:
+  - name: save
+    source_method: SpringDataSpecialtyRepository#save
+  - name: findById
+    source_method: SpringDataSpecialtyRepository#findById
+  - name: findAll
+    source_method: SpringDataSpecialtyRepository#findAll
+  - name: deleteById
+    source_method: SpringDataSpecialtyRepository#deleteById
+  - name: count
+    source_method: SpringDataSpecialtyRepository#count
+  - name: existsById
+    source_method: SpringDataSpecialtyRepository#existsById
+- name: spring-data-pet-impl-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataPetRepositoryImpl.java
+  operations:
+  - name: delete
+    source_method: SpringDataPetRepositoryImpl#delete
+- name: spring-data-pet-type-impl-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataPetTypeRepositoryImpl.java
+  operations:
+  - name: delete
+    source_method: SpringDataPetTypeRepositoryImpl#delete
+- name: spring-data-specialty-impl-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataSpecialtyRepositoryImpl.java
+  operations:
+  - name: delete
+    source_method: SpringDataSpecialtyRepositoryImpl#delete
+- name: spring-data-visit-impl-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataVisitRepositoryImpl.java
+  operations:
+  - name: delete
+    source_method: SpringDataVisitRepositoryImpl#delete
+- name: user-entity
+  source: src/main/java/org/springframework/samples/petclinic/model/User.java
+  entities:
+  - name: User
+    table: users
+    fields:
+    - name: username
+      type: String
+      constraints:
+      - '@Id'
+    - name: password
+      type: String
+    - name: enabled
+      type: Boolean
+    - name: roles
+      type: Set<Role>
+      constraints:
+      - '@OneToMany'
+- name: user-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataUserRepository.java
+  operations:
+  - name: save
+    source_method: SpringDataUserRepository#save
+  - name: findById
+    source_method: SpringDataUserRepository#findById
+  - name: findAll
+    source_method: SpringDataUserRepository#findAll
+  - name: deleteById
+    source_method: SpringDataUserRepository#deleteById
+  - name: count
+    source_method: SpringDataUserRepository#count
+  - name: existsById
+    source_method: SpringDataUserRepository#existsById
 - name: user-service
   source: src/main/java/org/springframework/samples/petclinic/service/UserServiceImpl.java
   operations:
@@ -658,19 +615,62 @@ capabilities:
       - kind: db_insert
         table: userRepository
     transaction: required
-- name: root-rest
-  source: src/main/java/org/springframework/samples/petclinic/rest/controller/RootRestController.java
-  endpoints:
-  - method: GET
-    path: /
-    behaviors:
-    - name: success
-      returns:
-        status: 200
-        body:
-          name: void
-    security:
-      cors: 'origins: *'
+- name: vet-entity
+  source: src/main/java/org/springframework/samples/petclinic/model/Vet.java
+  entities:
+  - name: Vet
+    table: vets
+    fields:
+    - name: specialties
+      type: Set<Specialty>
+      constraints:
+      - '@ManyToMany'
+- name: vet-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataVetRepository.java
+  operations:
+  - name: save
+    source_method: SpringDataVetRepository#save
+  - name: findById
+    source_method: SpringDataVetRepository#findById
+  - name: findAll
+    source_method: SpringDataVetRepository#findAll
+  - name: deleteById
+    source_method: SpringDataVetRepository#deleteById
+  - name: count
+    source_method: SpringDataVetRepository#count
+  - name: existsById
+    source_method: SpringDataVetRepository#existsById
+- name: visit-entity
+  source: src/main/java/org/springframework/samples/petclinic/model/Visit.java
+  entities:
+  - name: Visit
+    table: visits
+    fields:
+    - name: date
+      type: LocalDate
+    - name: description
+      type: String
+      constraints:
+      - '@NotEmpty'
+    - name: pet
+      type: Pet
+      constraints:
+      - '@ManyToOne'
+- name: visit-repository
+  source: src/main/java/org/springframework/samples/petclinic/repository/springdatajpa/SpringDataVisitRepository.java
+  operations:
+  - name: save
+    source_method: SpringDataVisitRepository#save
+  - name: findById
+    source_method: SpringDataVisitRepository#findById
+  - name: findAll
+    source_method: SpringDataVisitRepository#findAll
+  - name: deleteById
+    source_method: SpringDataVisitRepository#deleteById
+  - name: count
+    source_method: SpringDataVisitRepository#count
+  - name: existsById
+    source_method: SpringDataVisitRepository#existsById
 dependencies:
 - from: clinic-service
   to: pet-repository
