@@ -15,4 +15,31 @@ jobs:
         run: cargo install --git https://github.com/AliciaMartinelli/pecto pecto
 
       - name: Verify behavior spec
-        run: pecto verify specs.yaml
+        id: verify
+        continue-on-error: true
+        run: |
+          pecto verify specs.yaml 2>&1 | tee /tmp/pecto-output.txt
+          echo "EXIT_CODE=${PIPESTATUS[0]}" >> $GITHUB_ENV
+
+      - name: Post drift summary
+        if: env.EXIT_CODE == '1'
+        run: |
+          echo "## Behavior Drift Detected" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The code has changed in ways that don't match the committed spec." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```diff' >> $GITHUB_STEP_SUMMARY
+          grep '^[-+]' /tmp/pecto-output.txt | head -50 >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Fix:** Run \`pecto init . --output specs.yaml\` locally and commit the updated spec." >> $GITHUB_STEP_SUMMARY
+
+      - name: Post success summary
+        if: env.EXIT_CODE != '1'
+        run: |
+          echo "## Behavior Spec: No Drift" >> $GITHUB_STEP_SUMMARY
+          echo "Code matches the committed spec." >> $GITHUB_STEP_SUMMARY
+
+      - name: Fail if drift detected
+        if: env.EXIT_CODE == '1'
+        run: exit 1
